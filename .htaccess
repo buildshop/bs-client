@@ -1,0 +1,42 @@
+AddDefaultCharset UTF-8
+
+RewriteEngine on
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(favicon\.ico)
+
+# HTTPS protocol
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+
+# Redirect from "/page/" to "/page"
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$  /$1 [R=301,L]
+
+
+
+# Redirect from "/index.php" to "Home page"
+RewriteCond %{THE_REQUEST} ^.*/index\.php 
+RewriteRule ^(.*)index.php$ /$1 [R=301,L] 
+
+
+
+# redirect from "www" to "без www"
+#RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+#RewriteRule ^(.*)$ http://%1/$1 [L]
+# version 2
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$
+#RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
+#####
+
+RewriteCond %{REQUEST_URI} !^/assets.*$
+RewriteCond %{REQUEST_URI} !^/uploads.*$
+RewriteRule . index.php
+
+
+
+
