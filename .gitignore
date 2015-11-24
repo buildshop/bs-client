@@ -11,5 +11,4 @@ nbproject
 
 # windows thumbnail cache
 Thumbs.db
-
-/protected/config/
+/protected/config/*

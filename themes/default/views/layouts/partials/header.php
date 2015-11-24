@@ -6,14 +6,14 @@
                 <div class="col-lg-12">
                     <ul class="nav nav-pills pull-left">
                         <li><?php $this->widget('ext.checkCity.CheckCityWidget') ?></li>
-                        <li><a href="#">Гарантия</a></li>
-                        <li><a href="#">Доставка и оплата</a></li>
-                        <li><a href="#">Обратная связь</a></li>
+                        <li class="hidden-xs"><a href="#">Гарантия</a></li>
+                        <li class="hidden-xs"><a href="#">Доставка и оплата</a></li>
+                        <li class="hidden-xs"><a href="#">Обратная связь</a></li>
 
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Валюта <span class="badge badge-info"><?= Yii::app()->currency->active->symbol ?></span> <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Валюта <span class="label label-default"><?= Yii::app()->currency->active->symbol ?></span> <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
                                 <?php
                                 foreach (Yii::app()->currency->currencies as $currency) {
                                     echo Html::openTag('li');
@@ -37,7 +37,7 @@
                             ?>
                             <li>
                                 <a href="<?php echo Yii::app()->createUrl('/compare/default/index') ?>">
-                                    <i class="fa fa-compress"></i> <?= Yii::t('CompareModule.default', 'COMPARE', array('{num}' => CompareProductsComponent::countSession())) ?>
+                                    <i class="fa fa-compress"></i> <span class="hidden-xs"><?= Yii::t('CompareModule.default', 'COMPARE') ?></span> (<span id="countCompare"><?=CompareProductsComponent::countSession()?></span>)
                                 </a>
                             </li>
 
@@ -49,7 +49,7 @@
                             ?>
                             <li>
                                 <a href="<?= Yii::app()->createUrl('/wishlist/default/index') ?>">
-                                    <i class="fa fa-heart"></i> <?= Yii::t('WishlistModule.default', 'WISHLIST', array('{num}' => Wishlist::countByUser())) ?>
+                                    <i class="fa fa-heart"></i> <span class="hidden-xs"><?= Yii::t('WishlistModule.default', 'WISHLIST') ?></span> (<span id="countWishlist"><?=Wishlist::countByUser()?></span>)
                                 </a>                  
                             </li>
 
