@@ -1,5 +1,5 @@
-<div class="sign-in-page">
-    <div class="col-md-6 col-sm-6 sign-in">
+
+    <div class="col-md-6 col-sm-6">
         <h4><?= $this->pageName; ?></h4>
         <p>Заполните пожалуйста поля ниже</p>
         <?php
@@ -17,10 +17,7 @@
             <?= $form->labelEx($user, 'login', array('class' => 'info-title')); ?>
             <?= $form->textField($user, 'login', array('class' => 'form-control unicase-form-control text-input')); ?>
         </div>
-        <div class="form-group">
-            <?= $form->labelEx($user, 'domain', array('class' => 'info-title')); ?>
-            <?= $form->textField($user, 'domain', array('class' => 'form-control unicase-form-control text-input')); ?>
-        </div>
+
         <div class="form-group">
             <?= $form->labelEx($user, 'username', array('class' => 'info-title')); ?>
             <?= $form->textField($user, 'username', array('class' => 'form-control unicase-form-control text-input')); ?>
@@ -57,7 +54,7 @@
     <!-- Sign-in -->
 
     <!-- create a new account -->
-    <div class="col-md-6 col-sm-6 create-new-account">
+    <div class="col-md-6 col-sm-6">
         <h4>Вход</h4>
         <p>Здравствуйте, войдите в свой аккаунт</p>
                 <?php
@@ -66,5 +63,5 @@
         ?>
 
     </div>	
-</div>
+
 

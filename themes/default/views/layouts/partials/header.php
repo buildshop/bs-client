@@ -70,12 +70,12 @@
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-lg-push-6 col-md-push-6 col-sm-push-6">
             <div class="pull-right">
-
+                 <?php $this->widget('ext.callback.CallbackWidget'); ?>
             <?php
             if (!Yii::app()->request->isAjaxRequest)
                 echo Html::openTag('div', array('id' => 'cart', 'class' => 'small-cart'));
             $this->widget('mod.cart.widgets.cart.CartWidget', array(
-                'skin' => "currentTheme.views.layouts.partials.widgets.CartWidget"
+                'skin' => "currentTheme.views.layouts.partials.widgets.CartWidget1"
             ));
             if (!Yii::app()->request->isAjaxRequest)
                 echo Html::closeTag('div');

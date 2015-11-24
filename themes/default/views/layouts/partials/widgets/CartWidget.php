@@ -1,5 +1,14 @@
 <style>
+    .small-cart{
 
+    }
+    .small-cart .input-group-addon .fa{
+        font-size: 32px;
+    }
+    .small-cart .input-group-addon{
+
+        background: none;
+    }
     .small-cart .btn{
         text-align: left;
     }
@@ -37,14 +46,24 @@
     }
 </style>
 
-            <a href="#" class="cart-test dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-shopping-cart fa-2x"></i>
-                
-                <span class="badge"><?=($count > 0)?$count:0; ?></span>
 
-            </a>
-   <?php if ($items) { ?>
-        <div class="dropdown-menu pull-right ">
+<div class="btn-group btn-group-lg small-cart input-group">
+    <span class="input-group-addon"><i class="fa fa-shopping-cart"></i></span>
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <?php if ($count > 0) { ?>
+            <?=$count?> /
+
+            <span class="price">
+                <span><?= $total; ?></span>
+                <small><?= $currency->symbol; ?></small>
+            </span>
+        <?php } else { ?>
+            <?= Yii::t('app', 'CART_EMPTY') ?>
+        <?php } ?>
+
+    </button>
+    <?php if ($items) { ?>
+        <div class="dropdown-menu pull-right">
             <?php
             $i = 0;
             foreach ($items as $index => $product) {
@@ -90,3 +109,5 @@
             </div>
         </div>
     <?php } ?>
+</div>
+

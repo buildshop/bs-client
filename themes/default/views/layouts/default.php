@@ -21,16 +21,19 @@ $config = Yii::app()->settings->get('core');
                 $('.selectpicker').selectpicker();
             })
         </script>
+
         <div class="container">
+
             <div class="row">
-                <div class="col-xs-12">
-                    <h1><?= $this->pageName ?></h1>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <?php
                     $this->widget('Breadcrumbs', array(
                         'links' => $this->breadcrumbs,
                     ));
                     ?>
 
+                    <h1><?= $this->pageName ?></h1>
                     <?php if (Yii::app()->user->hasFlash('success')) { ?>
                         <div class="alert alert-success">
                             <i class="fa fa-check-circle"></i>
@@ -47,9 +50,9 @@ $config = Yii::app()->settings->get('core');
                     if (Yii::app()->package->demo)
                         Yii::app()->tpl->alert('danger', Yii::t('app', 'DEMO_MESSAGE'), false);
                     ?>
-                     </div>
-                    <?= $content ?>
-      
+                </div>
+                <?= $content ?>
+
             </div>
         </div>
         <?php $this->renderPartial('//layouts/partials/footer'); ?>
