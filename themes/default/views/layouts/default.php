@@ -19,7 +19,7 @@ $config = Yii::app()->settings->get('core');
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip();
                 $('.selectpicker').selectpicker();
-            })
+            });
         </script>
 
         <div class="container">
@@ -28,7 +28,8 @@ $config = Yii::app()->settings->get('core');
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <?php
-                    $this->widget('Breadcrumbs', array(
+                    $this->widget('BootstrapBreadcrumbs', array(
+                       // 'homeLink'=>'<i class="fa fa-home"></i>',
                         'links' => $this->breadcrumbs,
                     ));
                     ?>

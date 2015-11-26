@@ -124,6 +124,7 @@ html {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
+    margin: 0;
 }
 .btn-sm .fa,
 .btn-group-sm .fa{
@@ -907,4 +908,8 @@ img.zoom{
 .nav-tabs > li > a > span > img{
       float: left;
     margin-top: 5px;
+}
+
+.nav-pills > li + li{
+    margin-left: 0;
 }

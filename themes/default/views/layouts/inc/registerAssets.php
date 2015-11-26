@@ -6,6 +6,7 @@ $cs = Yii::app()->clientScript;
 $cs->registerCoreScript('jquery.ui');
 $cs->registerCssFile("http://fonts.googleapis.com/css?family=Exo+2:300,400,500,600&subset=latin,cyrillic");
 $cs->registerScriptFile($this->baseAssetsUrl . "/js/application.js");
+$cs->registerScriptFile($this->baseAssetsUrl . "/js/jquery.dialogOptions.js");
 $cs->registerScriptFile($this->assetsUrl . "/js/number_format.js");
 $cs->registerScriptFile($this->assetsUrl . "/js/bootstrap.min.js");
 $cs->registerScriptFile($this->assetsUrl . "/js/bootstrap-select.min.js");
