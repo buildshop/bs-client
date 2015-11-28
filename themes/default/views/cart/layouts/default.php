@@ -2,10 +2,6 @@
 $this->renderPartial('//layouts/inc/registerAssets');
 $config = Yii::app()->settings->get('core');
 $cs = Yii::app()->clientScript;
-$cs->registerScript('cart', "
-cart.spinnerRecount = true;
-
-", CClientScript::POS_HEAD);
 
 
 ?>

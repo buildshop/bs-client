@@ -44,13 +44,5 @@ Jgrowl::register();
  * Global js vars
  */
 $config = Yii::app()->settings->get('shop');
-$cs->registerScript('app2', "
-app.language = 'ru';
-app.token = '" . Yii::app()->request->csrfToken . "';
-app.debug = true;
-app.flashMessage = true;
 
-
-    
-", CClientScript::POS_HEAD);
 ?>
