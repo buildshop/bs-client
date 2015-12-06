@@ -1,4 +1,6 @@
-
+<?php
+Yii::import('mod.shop.models.ShopProduct');
+?>
 <div class="row">
     <div class="col-xs-12">
         <h3 class="slider-title">Популярные</h3>

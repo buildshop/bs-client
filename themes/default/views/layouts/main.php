@@ -138,7 +138,7 @@ $config = Yii::app()->settings->get('core');
                 </div>
                 <div class="poroduct-list col-md-9 col-sm-9 product_view_grid">
                     <?php
-                    if (Yii::app()->package->demo)
+                    if (Yii::app()->package->value->shop[0]['isdemo'])
                         Yii::app()->tpl->alert('danger', Yii::t('app', 'DEMO_MESSAGE'), false);
                     ?>
                     <?= $content ?>

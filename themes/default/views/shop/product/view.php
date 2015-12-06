@@ -2,19 +2,11 @@
 $cs = Yii::app()->clientScript;
 $cs->registerScriptFile($this->assetsUrl . "/js/jquery.flexslider-min.js");
 $cs->registerScriptFile($this->assetsUrl . "/js/jquery.elevatezoom.min.js");
-//$cs->registerScriptFile($this->baseAssetsUrl . "/js/jquery.elevatezoom.js");
-
-
 $cs->registerCssFile($this->assetsUrl . "/css/flexslider.css");
-
 ?>
 
-
 <script>
-
-
     $(window).load(function() {
-        
         $('.slides li img').on('click',function(){
             var large = $(this).attr('data-zoom-image');
             var src = $(this).attr('src');
@@ -35,21 +27,11 @@ $cs->registerCssFile($this->assetsUrl . "/css/flexslider.css");
             itemWidth: 100
             //asNavFor: '#slider'
         });
- 
-
     });
-
 </script>
 
 
-
-
-
-
-
 <div class="product-view">
-
-
     <div class="row">
         <div class="col-sm-5 col-xs-12">
             <?php if (isset($model->mainImage)) { ?>
@@ -105,7 +87,7 @@ $cs->registerCssFile($this->assetsUrl . "/css/flexslider.css");
                     </div>
                     <div class="row product-view-param">
                         <div class="col-sm-4 col-md-4 col-xs-6 text-muted"><?= $model::t('SKU'); ?>:</div>
-                        <div class="col-sm-8 col-md-8 col-xs-6"><?= $model->sku ?></div>
+                        <div class="col-sm-8 col-md-8 col-xs-6"><?= ($model->sku)?$model->sku: $model->getAutoSku(); ?></div>
                     </div>
                     <div class="row product-view-param">
                         <div class="col-sm-4 col-md-4 col-xs-6 text-muted"><?= $model::t('MANUFACTURER_ID'); ?>:</div>
@@ -124,8 +106,7 @@ $cs->registerCssFile($this->assetsUrl . "/css/flexslider.css");
                     <?= $model->short_description; ?>
 
                     <span class="price">
-                        <span id="productPrice">
-                            <?php echo $model->priceRange() ?></span>
+                        <span id="productPrice"><?= $model->priceRange() ?></span>
                         <?= Yii::app()->currency->active->symbol; ?>
                     </span>
                     <?php

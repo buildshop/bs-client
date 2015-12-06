@@ -37,7 +37,7 @@ if (count($processVariants)) {
             Yii::app()->clientScript->registerScript('productPrices', strtr('
 							var productPrices = {prices};
 						', array(
-                        '{prices}' => CJavaScript::encode($confData['prices'])
+                '{prices}' => CJavaScript::encode($confData['prices'])
                     )), CClientScript::POS_END);
 
             foreach ($confData['attributes'] as $attr) {
